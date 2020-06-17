@@ -34,10 +34,11 @@ namespace Calculator
             
             Button bNum = (Button)sender;
             operation = bNum.Text;
-            if (resultBox.Text == null && operation == "-" )
+            if (resultBox.Text == "0" && operation == "-" || resultBox.Text == "" && operation == "-" )
             {
-                resultBox.Text = resultBox.Text + bNum.Text;
-                operation_pressed = true;
+                resultBox.Clear();
+                resultBox.Text = bNum.Text;
+                
             }
             else
             {
